@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | CyberShield</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Fade-up overlay for page transition -->
+  <div id="fadeup-overlay"></div>
+  <header>
+    <h1>CyberShield</h1>
+    <p>Protect Your Data, Protect Your Life.</p>
+    <nav>
+      <a href="index.html" class="nav-link fadeup-link active" data-href="index.html">Home</a>
+      <a href="about.html" class="nav-link fadeup-link" data-href="about.html">About</a>
+      <a href="protect.html" class="nav-link fadeup-link" data-href="protect.html">Protect Yourself</a>
+      <a href="tools.html" class="nav-link fadeup-link" data-href="tools.html">Tools & Guides</a>
+      <a href="contact.html" class="nav-link fadeup-link" data-href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="intro-section">
+      <h2>What is CyberSecurity?</h2>
+      <p>
+        Cybersecurity is the activity of safeguarding systems, networks, and programs against digital threats. These intrusions are often intended to access, change, or delete sensitive information; extract money from users via ransomware; or disrupt regular corporate activities.
+      </p>
+      <p>
+        Implementing effective cybersecurity safeguards is more difficult nowadays, as there are more gadgets than humans, and attackers are becoming more creative.
+      </p>
+      <p>
+        A good cybersecurity posture has numerous layers of protection dispersed throughout the computers, networks, applications, or data that one wishes to safeguard. A unified threat management gateway system within an organization may automate cross-product integrations and accelerate important security operations processes such as detection, investigation, and remediation. To build an effective cyberdefense, people, procedures, and technology must all work together.
+      </p>
+      <div class="index-image">
+        <img src="cybersecurity.jpg" alt="Cyber awareness illustration" />
+      </div>
+      <ul class="icon-list">
+        <li><span class="icon-bullet" style="color:#ffb300;">🔒</span> Quick tips for online safety</li>
+        <li><span class="icon-bullet" style="color:#2196f3;">🛡️</span> How to protect personal data</li>
+        <li><span class="icon-bullet" style="color:#ab47bc;">📱</span> Secure your social media</li>
+      </ul>
+    </section>
+    <section class="highlight-tip">
+      <div class="tip-header">
+        <span class="tip-star">⭐</span>
+        <span class="tip-title">Featured Tip of the Week</span>
+      </div>
+      <div class="tip-body">
+        <span class="tip-main">Never use the same password for multiple sites!</span>
+        <a href="protect.html" class="tip-link nav-link fadeup-link" data-href="protect.html">Learn why</a>
+      </div>
+    </section>
+
+    <!-- Inserted new content here -->
+    <section class="hero">
+      <h1>Empowering You with Digital Protection</h1>
+      <p>CyberShield helps you stay safe online with essential tools and insights.</p>
+      <a href="protect.html" class="button">Protect Yourself Now</a>
+    </section>
+
+    <section class="features">
+      <div class="card">
+        <h3>Privacy Protection</h3>
+        <p>Learn how to keep your personal data secure on all your devices.</p>
+      </div>
+      <div class="card">
+        <h3>Cyber Awareness</h3>
+        <p>Understand common online threats like phishing, scams, and malware.</p>
+      </div>
+      <div class="card">
+        <h3>Real-Time Updates</h3>
+        <p>Stay informed with the latest cybersecurity news and safety trends.</p>
+      </div>
+    </section>
+
+    <blockquote>
+      "CyberShield gave me the confidence to browse safely and securely every day." — Sarah L., University Student
+    </blockquote>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-about">
+        <h3>About CyberShield</h3>
+        <p>Your digital security partner, helping students and professionals stay safe online through awareness and smart tools.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="protect.html">Protect Yourself</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@cybershield.com</p>
+        <p>Phone: +60 12-345 6789</p>
+      </div>
+
+      <div class="footer-newsletter-inline">
+        <h3>Newsletter</h3>
+        <form class="newsletter-form-inline">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 CyberShield. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    // Fade in on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const overlay = document.getElementById('fadeup-overlay');
+      overlay.classList.add('page-enter');
+      setTimeout(() => {
+        overlay.classList.remove('page-enter');
+      }, 1000);
+    });
+
+    // Fade out on navigation
+    document.querySelectorAll('a').forEach(link => {
+      // Only fade for internal links
+      if (link.hostname === window.location.hostname) {
+        link.addEventListener('click', function(e) {
+          // Ignore anchor and JS links
+          if (link.getAttribute('href') && !link.getAttribute('href').startsWith('#') && !link.getAttribute('target')) {
+            e.preventDefault();
+            const overlay = document.getElementById('fadeup-overlay');
+            overlay.classList.add('fadeup-animate');
+            setTimeout(() => {
+              window.location = link.href;
+            }, 900);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
